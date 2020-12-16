@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 4 </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .card:hover {
+            transition: all 0.2s ease-out;
+            box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+            top: -4px;
+            border: 1px solid #cccccc;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="text-align: center;">
+        <h1>Range</h1>
+        <p>Pick as many as you want </p>
+
+        <div class="row">
+            <div id="card1" class="card col-12 col-md border-0" onclick="handleOnClick(1)">
+                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-bright/0/5f898a7632.png?quality=70&width=132"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div id="a1" class="btn btn-outline-primary">+- 0.00 - 2.00</div>
+                </div>
+            </div>
+            <div id="card2" class="card col-12 col-md border-0" onclick="handleOnClick(2)">
+                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-neutral/0/1446237873.png?quality=70&width=132"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div id="a2" class="btn btn-outline-primary">+- 2.00 - 4.00</div>
+                </div>
+            </div>
+            <div id="card3" class="card col-12 col-md border-0" onclick="handleOnClick(3)">
+                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-black/1/1c6017ab1c.png?quality=70&width=132"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div id="a3" class="btn btn-outline-primary">+- 4.00 up</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function handleOnClick(index) {
+            // set element is selected
+            let tabcontent = document.getElementsByClassName("col-12 col-md border-0");
+            let isSelect = 0
+            for (i = 1; i < tabcontent.length + 1; i++) {
+                let card = "card" + i;
+                let a = "a" + i;
+                if (i == index) {
+                    document.getElementById(card).style.cssText = "transition: all 0.2s ease-out; box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);top: -4px;border: 1px solid #cccccc;background-color: white;"
+                    document.getElementById(a).className = "btn btn-primary"
+                } else {
+                    document.getElementById(card).style.cssText = ""
+                    document.getElementById(a).className = "btn btn-outline-primary"
+                }
+            }
+            setInterval(function(){location.href="page6.html"}, 500)
+        }
+    </script>
+</body>
+
+</html>

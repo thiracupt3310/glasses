@@ -37,29 +37,32 @@
 
 
         <div class="row">
-            <div id="card1" class="card col border-0" onclick="handleOnClick(1)">
+            <div id="card1" class="card col-12 col-sm border-0" onclick="handleOnClick(1)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id="a1" class="btn btn-outline-primary">Acetate</div>
                 </div>
             </div>
-            <div id="card2" class="card col border-0" onclick="handleOnClick(2)">
+            <div id="card2" class="card col-sm border-0" onclick="handleOnClick(2)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id="a2" class="btn btn-outline-primary">Metal</div>
                 </div>
             </div>
-            <div id="card3" class="card col border-0" onclick="handleOnClick(3)">
+            <div id="card3" class="card col-sm border-0" onclick="handleOnClick(3)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id="a3" class="btn btn-outline-primary">Mixed material</div>
                 </div>
             </div>
         </div>
-        <a id="confirm" class="btn btn-outline-secondary" href="page2.html">No preference</a>
+        <a id="confirm" class="btn btn-outline-secondary" href="page3.html">No preference</a>
     </div>
     <script>
         function handleOnClick(index) {
@@ -73,10 +76,10 @@
                 document.getElementById(card).style.cssText = ""
                 document.getElementById(a).className = "btn btn-outline-primary"
             }
-            let tabcontent = document.getElementsByClassName("card");
+            let tabcontent = document.getElementsByClassName("card col-sm border-0");
             let isSelect = 0
             // check if choosebu
-            for (i = 1; i < 4; i++) {
+            for (i = 1; i < tabcontent.length + 1; i++) {
                 a = "a" + i
                 if (document.getElementById(a).className == "btn btn-primary") {
                     isSelect++;
@@ -85,7 +88,7 @@
             if (isSelect > 0) {
                 document.getElementById("confirm").className = "btn btn-primary"
                 document.getElementById("confirm").innerHTML = "Continue"
-            }else {
+            } else {
                 document.getElementById("confirm").className = "btn btn-outline-secondary"
                 document.getElementById("confirm").innerHTML = "No preference"
             }

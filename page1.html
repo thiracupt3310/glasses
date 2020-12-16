@@ -35,29 +35,30 @@
         <h1>Which shapes do you like?</h1>
         <p>Pick as many as you want</p>
 
+        
         <div class="row">
-            <div id="card1" class="card col border-0" onclick="handleOnClick(1)">
+            <div id="card1" class="card col-6 col-md border-0" onclick="handleOnClick(1)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <div id="a1" class="btn btn-outline-primary">Round</div>
                 </div>
             </div>
-            <div id="card2" class="card col border-0" onclick="handleOnClick(2)">
+            <div id="card2" class="card col-6 col-md border-0" onclick="handleOnClick(2)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <div id="a2" class="btn btn-outline-primary">Rectangular</div>
                 </div>
             </div>
-            <div id="card3" class="card col border-0" onclick="handleOnClick(3)">
+            <div id="card3" class="card col-6 col-md border-0" onclick="handleOnClick(3)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <div id="a3" class="btn btn-outline-primary">Square</div>
                 </div>
             </div>
-            <div id="card4" class="card col border-0" onclick="handleOnClick(4)">
+            <div id="card4" class="card col-6 col-md border-0" onclick="handleOnClick(4)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
@@ -80,10 +81,10 @@
                 document.getElementById(card).style.cssText = ""
                 document.getElementById(a).className = "btn btn-outline-primary"
             }
-            let tabcontent = document.getElementsByClassName("card");
+            let tabcontent = document.getElementsByClassName("col-sm");
             let isSelect = 0
             // check if choosebu
-            for (i = 1; i < 4; i++) {
+            for (i = 1; i < tabcontent.length+1; i++) {
                 a = "a" + i
                 if (document.getElementById(a).className == "btn btn-primary") {
                     isSelect++;
