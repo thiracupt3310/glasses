@@ -17,6 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <style>
         .card:hover {
@@ -29,7 +31,7 @@
     </style>
 </head>
 
-<body>
+<body id="body">
 
     <div class="container" style="text-align: center;">
         <h1>Which material do you like</h1>
@@ -41,7 +43,8 @@
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
                     <div id="a1" class="btn btn-outline-primary">Acetate</div>
                 </div>
             </div>
@@ -49,7 +52,8 @@
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
                     <div id="a2" class="btn btn-outline-primary">Metal</div>
                 </div>
             </div>
@@ -57,14 +61,18 @@
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
                     class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
                     <div id="a3" class="btn btn-outline-primary">Mixed material</div>
                 </div>
             </div>
         </div>
-        <a id="confirm" class="btn btn-outline-secondary" href="page3.html">No preference</a>
+        <button id="confirm" class="btn btn-outline-secondary" onclick="changePage()">No preference</button>
+
     </div>
     <script>
+        $("#body").hide().fadeIn(1000);
+
         function handleOnClick(index) {
             let card = "card" + index;
             let a = "a" + index;
@@ -92,6 +100,10 @@
                 document.getElementById("confirm").className = "btn btn-outline-secondary"
                 document.getElementById("confirm").innerHTML = "No preference"
             }
+        }
+        function changePage(){
+            $("#body").fadeOut(1000);
+            setInterval(function () { location.href = "page3.html" }, 1000)
         }
     </script>
 </body>
