@@ -37,7 +37,7 @@
         <h1>Which shapes do you like?</h1>
         <p>Pick as many as you want</p>
 
-        
+
         <div class="row">
             <div id="card1" class="card col-6 col-md border-0" onclick="handleOnClick(1)">
                 <img src="https://cdn.shopify.com/s/files/1/1817/8293/products/AsteriBlackFront_2000x.jpg?v=1597655858"
@@ -72,8 +72,10 @@
 
     </div>
     <script>
+        document.getElementById("body").style.display = "block";
+    
         $("#body").hide().fadeIn(1000);
-
+    
         function handleOnClick(index) {
             let card = "card" + index;
             let a = "a" + index;
@@ -85,10 +87,10 @@
                 document.getElementById(card).style.cssText = ""
                 document.getElementById(a).className = "btn btn-outline-primary"
             }
-            let tabcontent = document.getElementsByClassName("col-sm");
+            let tabcontent = document.getElementsByClassName("card");
             let isSelect = 0
             // check if choosebu
-            for (i = 1; i < tabcontent.length+1; i++) {
+            for (i = 1; i < tabcontent.length + 1; i++) {
                 a = "a" + i
                 if (document.getElementById(a).className == "btn btn-primary") {
                     isSelect++;
@@ -97,13 +99,12 @@
             if (isSelect > 0) {
                 document.getElementById("confirm").className = "btn btn-primary"
                 document.getElementById("confirm").innerHTML = "Continue"
-            }else {
+            } else {
                 document.getElementById("confirm").className = "btn btn-outline-secondary"
                 document.getElementById("confirm").innerHTML = "No preference"
             }
-            
         }
-        function changePage(){
+        function changePage() {
             $("#body").fadeOut(1000);
             setInterval(function () { location.href = "page2.html" }, 1000)
         }

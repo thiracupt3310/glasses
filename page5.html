@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body id="body">
+<body id="body" style="display: none">
 
     <div class="container" style="text-align: center;">
         <h1>Range</h1>
@@ -83,11 +83,13 @@
 
 
     <script>
+        document.getElementById("body").style.display = "block";
+
         $("#body").hide().fadeIn(1000);
 
         function handleOnClick(index) {
             // set element is selected
-            let tabcontent = document.getElementsByClassName("col-12 col-md border-0");
+            let tabcontent = document.getElementsByClassName("card");
             let isSelect = 0
             for (i = 1; i < tabcontent.length + 1; i++) {
                 let card = "card" + i;

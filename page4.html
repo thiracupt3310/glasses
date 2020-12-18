@@ -31,85 +31,87 @@
     </style>
 </head>
 
-<body id="body">
+<body id="body" style="display: none"></body>
 
-    <div class="container" style="text-align: center;">
-        <h1>Which habit do you like?</h1>
-        <p>Pick as many as you want </p>
+<div class="container" style="text-align: center;">
+    <h1>Which habit do you like?</h1>
+    <p>Pick as many as you want </p>
 
-        <div class="row">
-            <div id="card1" class="card col-6 col-md border-0" onclick="handleOnClick(1)">
-                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-bright/0/5f898a7632.png?quality=70&width=132"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div id="a1" class="btn btn-outline-primary">Drive</div>
-                </div>
+    <div class="row">
+        <div id="card1" class="card col-6 col-md border-0" onclick="handleOnClick(1)">
+            <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-bright/0/5f898a7632.png?quality=70&width=132"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div id="a1" class="btn btn-outline-primary">Drive</div>
             </div>
-            <div id="card2" class="card col-6 col-md border-0" onclick="handleOnClick(2)">
-                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-neutral/0/1446237873.png?quality=70&width=132"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div id="a2" class="btn btn-outline-primary">Read a book</div>
-                </div>
-            </div>
-            <div id="card3" class="card col-6 col-md border-0" onclick="handleOnClick(3)">
-                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-black/1/1c6017ab1c.png?quality=70&width=132"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div id="a3" class="btn btn-outline-primary">Outting</div>
-                </div>
-            </div>
-            <div id="card4" class="card col-6 col-md border-0" onclick="handleOnClick(4)">
-                <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-tortoise/1/7c9e6b8959.png?quality=70&width=132"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div id="a4" class="btn btn-outline-primary">Play a computer/phone</div>
-                </div>
-            </div>
-
         </div>
-
-        <button id="confirm" class="btn btn-outline-secondary" onclick="changePage()">No preference</button>
+        <div id="card2" class="card col-6 col-md border-0" onclick="handleOnClick(2)">
+            <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-neutral/0/1446237873.png?quality=70&width=132"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div id="a2" class="btn btn-outline-primary">Read a book</div>
+            </div>
+        </div>
+        <div id="card3" class="card col-6 col-md border-0" onclick="handleOnClick(3)">
+            <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-black/1/1c6017ab1c.png?quality=70&width=132"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div id="a3" class="btn btn-outline-primary">Outting</div>
+            </div>
+        </div>
+        <div id="card4" class="card col-6 col-md border-0" onclick="handleOnClick(4)">
+            <img src="https://i.warbycdn.com/v/c/assets/frames-quiz/image/color-tortoise/1/7c9e6b8959.png?quality=70&width=132"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div id="a4" class="btn btn-outline-primary">Play a computer/phone</div>
+            </div>
+        </div>
 
     </div>
 
+    <button id="confirm" class="btn btn-outline-secondary" onclick="changePage()">No preference</button>
 
-    <script>
-        $("#body").hide().fadeIn(1000);
+</div>
 
-        function handleOnClick(index) {
-            let card = "card" + index;
-            let a = "a" + index;
-            // set element is selected
-            if (document.getElementById(a).className != "btn btn-primary") {
-                document.getElementById(card).style.cssText = "transition: all 0.2s ease-out; box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);top: -4px;border: 1px solid #cccccc;background-color: white;"
-                document.getElementById(a).className = "btn btn-primary"
-            } else {
-                document.getElementById(card).style.cssText = ""
-                document.getElementById(a).className = "btn btn-outline-primary"
-            }
-            let tabcontent = document.getElementsByClassName("col-6 col-md border-0");
-            let isSelect = 0
-            // check if choosebu
-            for (i = 1; i < tabcontent.length + 1; i++) {
-                a = "a" + i
-                if (document.getElementById(a).className == "btn btn-primary") {
-                    isSelect++;
-                }
-            }
-            if (isSelect > 0) {
-                document.getElementById("confirm").className = "btn btn-primary"
-                document.getElementById("confirm").innerHTML = "Continue"
-            } else {
-                document.getElementById("confirm").className = "btn btn-outline-secondary"
-                document.getElementById("confirm").innerHTML = "No preference"
+
+<script>
+    document.getElementById("body").style.display = "block";
+
+    $("#body").hide().fadeIn(1000);
+
+    function handleOnClick(index) {
+        let card = "card" + index;
+        let a = "a" + index;
+        // set element is selected
+        if (document.getElementById(a).className != "btn btn-primary") {
+            document.getElementById(card).style.cssText = "transition: all 0.2s ease-out; box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);top: -4px;border: 1px solid #cccccc;background-color: white;"
+            document.getElementById(a).className = "btn btn-primary"
+        } else {
+            document.getElementById(card).style.cssText = ""
+            document.getElementById(a).className = "btn btn-outline-primary"
+        }
+        let tabcontent = document.getElementsByClassName("card");
+        let isSelect = 0
+        // check if choosebu
+        for (i = 1; i < tabcontent.length + 1; i++) {
+            a = "a" + i
+            if (document.getElementById(a).className == "btn btn-primary") {
+                isSelect++;
             }
         }
-        function changePage(){
-            $("#body").fadeOut(1000);
-            setInterval(function () { location.href = "page5.html" }, 1000)
+        if (isSelect > 0) {
+            document.getElementById("confirm").className = "btn btn-primary"
+            document.getElementById("confirm").innerHTML = "Continue"
+        } else {
+            document.getElementById("confirm").className = "btn btn-outline-secondary"
+            document.getElementById("confirm").innerHTML = "No preference"
         }
-    </script>
+    }
+    function changePage() {
+        $("#body").fadeOut(1000);
+        setInterval(function () { location.href = "page5.html" }, 1000)
+    }
+</script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body id="body">
+<body id="body" style="display: none">
 
     <div class="container" style="text-align: center;">
         <h1>Range</h1>
@@ -98,7 +98,7 @@
                 document.getElementById(card).style.cssText = ""
                 document.getElementById(a).className = "btn btn-outline-primary"
             }
-            let tabcontent = document.getElementsByClassName("col-6 col-md border-0");
+            let tabcontent = document.getElementsByClassName("card");
             let isSelect = 0
             // check if choosebu
             for (i = 1; i < tabcontent.length+1; i++) {
@@ -115,6 +115,7 @@
                 document.getElementById("confirm").innerHTML = "No preference"
             }
         }
+        document.getElementById("body").style.display = "block";
         $("#body").hide().fadeIn(1000);
 
     </script>
